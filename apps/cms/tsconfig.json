@@ -1,0 +1,8 @@
+{
+  "extends": "@masteracharavadee/typescript-config/react.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "paths": {}
+  },
+  "include": ["**/*.ts", "**/*.tsx"]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "@masteracharavadee/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vinext dev",
+    "build": "vinext build",
+    "start": "vinext start",
+    "deploy": "vinext deploy",
+    "lint": "vinext lint"
+  },
+  "dependencies": {
+    "@masteracharavadee/api-client": "workspace:*",
+    "@masteracharavadee/design-system": "workspace:*",
+    "@radix-ui/react-dialog": "^1",
+    "@radix-ui/react-navigation-menu": "^1",
+    "@radix-ui/react-separator": "^1",
+    "@radix-ui/react-slot": "^1",
+    "@sanity/client": "^7.16.0",
+    "@sanity/image-url": "^1",
+    "class-variance-authority": "^0.7",
+    "clsx": "^2",
+    "lucide-react": "^0.460",
+    "next-sanity": "^9",
+    "react": "^19",
+    "react-dom": "^19",
+    "tailwind-merge": "^2",
+    "vinext": "latest",
+    "zod": "^3"
+  },
+  "devDependencies": {
+    "@masteracharavadee/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^5.1.4",
+    "@vitejs/plugin-rsc": "^0.5.21",
+    "autoprefixer": "^10",
+    "postcss": "^8",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vite": "^7"
+  }
+}

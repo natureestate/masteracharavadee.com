@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-gold-50: #FFF9E6;
+  --color-brand-gold-100: #FFF0BF;
+  --color-brand-gold-200: #FFE699;
+  --color-brand-gold-300: #FFDB66;
+  --color-brand-gold-400: #FFD133;
+  --color-brand-gold-500: #C8A951;
+  --color-brand-gold-600: #B8963D;
+  --color-brand-gold-700: #9A7B2F;
+  --color-brand-gold-800: #7C6124;
+  --color-brand-gold-900: #5E4919;
+
+  --color-brand-cream: #FAF8F5;
+  --color-brand-dark: #1A1A1A;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-brand-dark);
+    background-color: #fff;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-gold-200);
+    color: var(--color-brand-dark);
+  }
+}
+
+@layer components {
+  .gold-gradient {
+    background: linear-gradient(135deg, var(--color-brand-gold-400), var(--color-brand-gold-600));
+  }
+
+  .gold-text {
+    background: linear-gradient(135deg, var(--color-brand-gold-500), var(--color-brand-gold-700));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-padding {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .section-padding {
+      padding-left: 8rem;
+      padding-right: 8rem;
+    }
+  }
+}
+
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}

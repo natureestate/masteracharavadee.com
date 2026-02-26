@@ -1,0 +1,14 @@
+{
+  "name": "@masteracharavadee/design-system",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tailwind": "./tailwind/preset.ts",
+    "./icons": "./icons/index.ts"
+  },
+  "devDependencies": {
+    "@masteracharavadee/typescript-config": "workspace:*",
+    "tailwindcss": "^4"
+  }
+}
