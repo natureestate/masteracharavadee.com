@@ -7,7 +7,7 @@ export function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30"
         style={{
-          backgroundImage: "url(/images/retreat-aerial.jpg)",
+          backgroundImage: "url(/images/retreat-aerial.webp)",
         }}
       />
       <div className="absolute inset-0 bg-linear-to-b from-brand-dark/60 via-brand-dark/40 to-brand-dark/80" />

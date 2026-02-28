@@ -23,7 +23,7 @@ const navItems: NavItem[] = [
   { label: "About", href: "/about" },
   {
     label: "Teachings",
-    href: "/blog",
+    href: "/#teachings",
     children: [{ label: "Blog", href: "/blog" }],
   },
   {
