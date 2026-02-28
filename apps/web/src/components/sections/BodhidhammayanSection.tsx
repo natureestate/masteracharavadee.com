@@ -7,7 +7,7 @@ export function BodhidhammayanSection() {
     <section id="bodhidhammayan" className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/images/retreat-aerial.jpg"
+          src="/images/retreat-aerial-bodhidhammayan.jpg"
           alt="Bodhidhammayan Retreat aerial view"
           fill
           className="object-cover opacity-20"
