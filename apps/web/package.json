@@ -30,6 +30,7 @@
     "zod": "^3"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.25.6",
     "@masteracharavadee/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "^4",
     "@types/react": "^19",
@@ -40,6 +41,7 @@
     "postcss": "^8",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "vite": "^7"
+    "vite": "^7",
+    "wrangler": "^4.69.0"
   }
 }
