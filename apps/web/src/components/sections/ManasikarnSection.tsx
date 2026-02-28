@@ -47,6 +47,10 @@ export function ManasikarnSection() {
                 The Manasikarn hall was inaugurated in September 2022, inviting
                 all people to visit it and enjoy its magical surroundings.
               </p>
+              <p>
+                If you want to learn more about Manasikarn hall, please visit
+                the website.
+              </p>
             </div>
 
             <div className="mt-8">

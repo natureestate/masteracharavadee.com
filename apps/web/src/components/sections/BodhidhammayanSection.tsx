@@ -41,6 +41,16 @@ export function BodhidhammayanSection() {
                 words &ldquo;atapi sampajano satima&rdquo;, which means
                 &ldquo;keep persevering, and burning impurities&rdquo;.
               </p>
+              <p>
+                Meditators are trained to live in a non-worldly way of life,
+                staying in solitude, under intensive, firm and stringent way of
+                living amid the peaceful nature, suitable for mental development.
+              </p>
+              <p>
+                During the retreats they are trained to be mindful with
+                consciousness and sharpness in all manners, practicing in silence
+                and without contact with outside world.
+              </p>
             </div>
 
             <div className="mt-8">

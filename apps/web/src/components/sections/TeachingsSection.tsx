@@ -16,9 +16,8 @@ const teachings = [
     title: "Books",
     description: "Top Ideas in Buddhism and famous stories in the Buddha's time.",
     image: "/images/teachings-books.jpg",
-    href: "https://www.amazon.com/AWAKEN-MADNESS-Acharavadee-Wongsakon-ebook/dp/B0CNXT8BRT",
+    href: "/blog?category=books",
     cta: "More",
-    external: true,
   },
   {
     title: "Videos",
