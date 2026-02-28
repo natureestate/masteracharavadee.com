@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -74,12 +74,32 @@ const navItems: NavItem[] = [
 export function DesktopHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
-  const [megaOpen, setMegaOpen] = useState(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleMenuEnter = useCallback((label: string) => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setHoveredMenu(label);
+  }, []);
+
+  const handleMenuLeave = useCallback(() => {
+    closeTimerRef.current = setTimeout(() => {
+      setHoveredMenu(null);
+    }, 150);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    };
   }, []);
 
   return (
@@ -106,32 +126,33 @@ export function DesktopHeader() {
         <nav className="flex items-center gap-0.5">
           {navItems.map((item) => {
             const hasMega = !!item.mega;
+            const isHovered = hoveredMenu === item.label;
 
             return (
               <div
                 key={item.label}
-                className="relative group/nav"
-                onMouseEnter={() => {
-                  setHoveredMenu(item.label);
-                  if (hasMega) setMegaOpen(true);
-                }}
-                onMouseLeave={() => {
-                  setHoveredMenu(null);
-                  if (hasMega) setMegaOpen(false);
-                }}
+                className="relative"
+                onMouseEnter={() => handleMenuEnter(item.label)}
+                onMouseLeave={handleMenuLeave}
               >
                 {item.external ? (
                   <a
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative px-3.5 py-2 text-sm font-medium rounded-lg transition-all duration-200 inline-flex items-center gap-1.5 text-brand-dark hover:text-brand-gold-600 hover:bg-brand-gold-50/50"
+                    className={cn(
+                      "relative px-3.5 py-2 text-sm font-medium rounded-lg transition-all duration-200 inline-flex items-center gap-1.5",
+                      isHovered
+                        ? "text-brand-gold-600 bg-brand-gold-50/50"
+                        : "text-brand-dark"
+                    )}
                   >
                     <span
                       className={cn(
-                        "transition-all duration-200 opacity-0 -ml-5 w-0 overflow-hidden",
-                        hoveredMenu === item.label &&
-                          "opacity-100 ml-0 w-4"
+                        "inline-flex items-center justify-center transition-all duration-300 ease-out",
+                        isHovered
+                          ? "w-4 opacity-100 mr-0"
+                          : "w-0 opacity-0 -mr-1.5"
                       )}
                     >
                       {item.icon}
@@ -142,13 +163,19 @@ export function DesktopHeader() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="relative px-3.5 py-2 text-sm font-medium rounded-lg transition-all duration-200 inline-flex items-center gap-1.5 text-brand-dark hover:text-brand-gold-600 hover:bg-brand-gold-50/50"
+                    className={cn(
+                      "relative px-3.5 py-2 text-sm font-medium rounded-lg transition-all duration-200 inline-flex items-center gap-1.5",
+                      isHovered
+                        ? "text-brand-gold-600 bg-brand-gold-50/50"
+                        : "text-brand-dark"
+                    )}
                   >
                     <span
                       className={cn(
-                        "transition-all duration-200 opacity-0 -ml-5 w-0 overflow-hidden",
-                        hoveredMenu === item.label &&
-                          "opacity-100 ml-0 w-4"
+                        "inline-flex items-center justify-center transition-all duration-300 ease-out",
+                        isHovered
+                          ? "w-4 opacity-100 mr-0"
+                          : "w-0 opacity-0 -mr-1.5"
                       )}
                     >
                       {item.icon}
@@ -157,10 +184,8 @@ export function DesktopHeader() {
                     {hasMega && (
                       <ChevronDown
                         className={cn(
-                          "h-3 w-3 transition-transform duration-200",
-                          megaOpen &&
-                            hoveredMenu === item.label &&
-                            "rotate-180"
+                          "h-3.5 w-3.5 transition-transform duration-200",
+                          isHovered && "rotate-180"
                         )}
                       />
                     )}
@@ -170,19 +195,19 @@ export function DesktopHeader() {
                 {hasMega && (
                   <div
                     className={cn(
-                      "absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-200",
-                      megaOpen && hoveredMenu === item.label
-                        ? "opacity-100 visible translate-y-0"
-                        : "opacity-0 invisible -translate-y-1"
+                      "absolute top-full left-1/2 -translate-x-1/2 pt-3 z-60 transition-all duration-200 ease-out",
+                      isHovered
+                        ? "opacity-100 visible translate-y-0 pointer-events-auto"
+                        : "opacity-0 invisible -translate-y-2 pointer-events-none"
                     )}
                   >
-                    <div className="w-72 bg-white rounded-xl shadow-xl border border-brand-gold-100/60 p-2 backdrop-blur-sm">
+                    <div className="w-80 bg-white rounded-xl shadow-2xl border border-brand-gold-100/60 p-2 ring-1 ring-black/5">
                       {item.mega!.map((child) => (
                         <Link
                           key={child.label}
                           href={child.href}
                           className="flex items-start gap-3 px-3 py-3 rounded-lg hover:bg-brand-gold-50 transition-colors group/item"
-                          onClick={() => setMegaOpen(false)}
+                          onClick={() => setHoveredMenu(null)}
                         >
                           <span className="mt-0.5 text-brand-gold-500 group-hover/item:text-brand-gold-600 transition-colors">
                             {child.icon}
