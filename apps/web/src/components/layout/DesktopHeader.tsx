@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -46,7 +46,7 @@ const navItems: NavItem[] = [
 export function DesktopHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -54,14 +54,17 @@ export function DesktopHeader() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleMouseEnter = (label: string, hasChildren: boolean) => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    if (hasChildren) setOpenDropdown(label);
-  };
+  const open = useCallback((label: string) => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setOpenDropdown(label);
+  }, []);
 
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setOpenDropdown(null), 150);
-  };
+  const scheduleClose = useCallback(() => {
+    closeTimerRef.current = setTimeout(() => setOpenDropdown(null), 200);
+  }, []);
 
   return (
     <header
@@ -85,57 +88,64 @@ export function DesktopHeader() {
         </Link>
 
         <nav className="flex items-center gap-1">
-          {navItems.map((item) => (
-            <div
-              key={item.label}
-              className="relative"
-              onMouseEnter={() =>
-                handleMouseEnter(item.label, !!item.children)
-              }
-              onMouseLeave={handleMouseLeave}
-            >
-              {item.external ? (
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 text-sm font-medium rounded-md transition-colors text-brand-dark hover:text-brand-gold-600"
-                >
-                  {item.label}
-                </a>
-              ) : (
+          {navItems.map((item) =>
+            item.children ? (
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => open(item.label)}
+                onMouseLeave={scheduleClose}
+              >
                 <Link
                   href={item.href}
                   className="px-4 py-2 text-sm font-medium rounded-md transition-colors inline-flex items-center gap-1 text-brand-dark hover:text-brand-gold-600"
                 >
                   {item.label}
-                  {item.children && (
-                    <ChevronDown
-                      className={cn(
-                        "h-3 w-3 transition-transform duration-200",
-                        openDropdown === item.label && "rotate-180"
-                      )}
-                    />
-                  )}
+                  <ChevronDown
+                    className={cn(
+                      "h-3 w-3 transition-transform duration-200",
+                      openDropdown === item.label && "rotate-180"
+                    )}
+                  />
                 </Link>
-              )}
 
-              {item.children && openDropdown === item.label && (
-                <div className="absolute top-full left-0 mt-0 w-48 bg-white rounded-lg shadow-lg border border-brand-gold-100 py-1">
-                  {item.children.map((child) => (
-                    <Link
-                      key={child.label}
-                      href={child.href}
-                      className="block px-4 py-2.5 text-sm text-brand-dark hover:bg-brand-gold-50 hover:text-brand-gold-700 transition-colors"
-                      onClick={() => setOpenDropdown(null)}
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+                {openDropdown === item.label && (
+                  <div className="absolute top-full left-0 pt-1 w-48">
+                    <div className="bg-white rounded-lg shadow-lg border border-brand-gold-100 py-1">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.label}
+                          href={child.href}
+                          className="block px-4 py-2.5 text-sm text-brand-dark hover:bg-brand-gold-50 hover:text-brand-gold-700 transition-colors"
+                          onClick={() => setOpenDropdown(null)}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : item.external ? (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 text-sm font-medium rounded-md transition-colors text-brand-dark hover:text-brand-gold-600"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="px-4 py-2 text-sm font-medium rounded-md transition-colors text-brand-dark hover:text-brand-gold-600"
+              >
+                {item.label}
+              </Link>
+            )
+          )}
         </nav>
       </div>
     </header>
