@@ -4,7 +4,17 @@ import { ExternalLink } from "lucide-react";
 
 export function BodhidhammayanSection() {
   return (
-    <section id="bodhidhammayan" className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
+    <>
+      <div className="relative w-full h-[50vh] md:h-[65vh]">
+        <Image
+          src="https://i0.wp.com/masteracharavadee.com/wp-content/uploads/2022/08/JP_DJI_0065-2_W_re.jpg?resize=2048%2C1150&ssl=1"
+          alt="Bodhidhammayan aerial view"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
+      <section id="bodhidhammayan" className="relative py-20 md:py-28 bg-brand-dark text-white overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src="/images/retreat-aerial-bodhidhammayan.jpg"
@@ -92,5 +102,6 @@ export function BodhidhammayanSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }

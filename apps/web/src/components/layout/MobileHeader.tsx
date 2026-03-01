@@ -23,13 +23,11 @@ const mobileMenuItems: MobileMenuItem[] = [
   },
   {
     label: "Bodhidhammayan",
-    href: "https://www.bodhidhammayan.org/",
-    external: true,
+    href: "/#bodhidhammayan",
   },
   {
     label: "Manasikarn Hall",
-    href: "https://manasikarn.com/",
-    external: true,
+    href: "/#manasikarn",
   },
   {
     label: "Buy Master's Book",

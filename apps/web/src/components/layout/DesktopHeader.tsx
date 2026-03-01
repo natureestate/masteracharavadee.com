@@ -51,15 +51,13 @@ const navItems: NavItem[] = [
   },
   {
     label: "Bodhidhammayan",
-    href: "https://www.bodhidhammayan.org/",
+    href: "/#bodhidhammayan",
     icon: <Mountain className="h-4 w-4" />,
-    external: true,
   },
   {
     label: "Manasikarn Hall",
-    href: "https://manasikarn.com/",
+    href: "/#manasikarn",
     icon: <Landmark className="h-4 w-4" />,
-    external: true,
   },
   {
     label: "Buy Master's Book",

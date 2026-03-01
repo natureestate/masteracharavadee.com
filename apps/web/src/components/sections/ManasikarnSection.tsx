@@ -4,7 +4,17 @@ import { ExternalLink } from "lucide-react";
 
 export function ManasikarnSection() {
   return (
-    <section id="manasikarn" className="py-20 md:py-28 bg-white">
+    <>
+      <div className="relative w-full h-[50vh] md:h-[65vh]">
+        <Image
+          src="https://masteracharavadee.com/wp-content/uploads/2022/11/manasikarn.jpeg"
+          alt="Manasikarn Hall"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
+      <section id="manasikarn" className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative">
@@ -69,5 +79,6 @@ export function ManasikarnSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }
