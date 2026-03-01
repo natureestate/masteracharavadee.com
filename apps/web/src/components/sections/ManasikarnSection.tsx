@@ -8,37 +8,27 @@ export function ManasikarnSection() {
       <div className="relative w-full h-[50vh] md:h-[65vh]">
         <Image
           src="https://masteracharavadee.com/wp-content/uploads/2022/11/manasikarn.jpeg"
-          alt="Manasikarn Hall"
+          alt="Manasikarn Hall aerial view"
           fill
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-wide drop-shadow-lg">
+            Manasikarn Hall
+          </h2>
+        </div>
       </div>
-      <section id="manasikarn" className="py-20 md:py-28 bg-white">
-      <div className="max-w-7xl mx-auto section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="relative">
-            <div className="relative aspect-3/4 rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/images/manasikarn-hall.jpg"
-                alt="Manasikarn Hall"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-            <div className="absolute -top-4 -left-4 w-20 h-20 border-2 border-brand-gold-400 rounded-2xl hidden md:block" />
-          </div>
 
-          <div>
-            <span className="text-brand-gold-500 text-sm font-semibold tracking-widest uppercase mb-2 block">
+      <section id="manasikarn" className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto section-padding">
+          <div className="max-w-3xl mx-auto">
+            <span className="text-brand-gold-500 text-sm font-semibold tracking-widest uppercase mb-2 block text-center">
               Sacred Space
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-dark mb-6">
-              Manasikarn Hall
-            </h2>
 
-            <div className="space-y-4 text-brand-dark/70 leading-relaxed">
+            <div className="space-y-4 text-brand-dark/70 leading-relaxed mt-8">
               <p>
                 Built from Master Acharavadee and her student&apos;s deepest
                 feeling of gratitude to Lord Buddha and the immeasurable value of
@@ -63,7 +53,7 @@ export function ManasikarnSection() {
               </p>
             </div>
 
-            <div className="mt-8">
+            <div className="mt-8 text-center">
               <Button size="lg" asChild>
                 <a
                   href="https://manasikarn.com/"
@@ -77,8 +67,7 @@ export function ManasikarnSection() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 }

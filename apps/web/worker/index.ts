@@ -5,7 +5,7 @@
  * For apps without image optimization, you can use vinext/server/app-router-entry
  * directly in wrangler.jsonc: "main": "vinext/server/app-router-entry"
  */
-import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
+import { handleImageOptimization } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
 
 interface CloudflareImagesBinding {
@@ -26,7 +26,7 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === "/_vinext/image") {
-      const allowedWidths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];
+      // allowedWidths ไม่ส่ง (undefined) เพื่อให้รับทุก width ที่ component ร้องขอได้
       return handleImageOptimization(request, {
         fetchAsset: (path) => env.ASSETS.fetch(new Request(new URL(path, request.url))),
         transformImage: env.IMAGES
@@ -35,7 +35,7 @@ export default {
               return result.response();
             }
           : undefined,
-      }, allowedWidths);
+      });
     }
 
     return handler.fetch(request);
