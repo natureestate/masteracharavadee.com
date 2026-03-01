@@ -10,7 +10,7 @@ export function ManasikarnSection() {
           src="https://masteracharavadee.com/wp-content/uploads/2022/11/manasikarn.jpeg"
           alt="Manasikarn Hall aerial view"
           fill
-          className="object-cover"
+          className="object-cover object-[center_70%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/20" />

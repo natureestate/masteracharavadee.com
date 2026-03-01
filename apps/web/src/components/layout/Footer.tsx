@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, Phone, Facebook } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { ScrollToTopButton } from "@/components/ui/scroll-to-top";
 
 export function Footer() {
   return (
@@ -100,12 +101,14 @@ export function Footer() {
 
         <Separator className="bg-white/10 my-8" />
 
-        <p className="text-center text-xs text-white/40">
-          &copy; {new Date().getFullYear()} All Rights Reserved masteracharavadee.com
-        </p>
+        <div className="flex items-center justify-between">
+          <p className="text-xs text-white/40">
+            &copy; {new Date().getFullYear()} All Rights Reserved masteracharavadee.com
+          </p>
+          <ScrollToTopButton />
+        </div>
       </div>
 
-      {/* Bottom padding สำหรับ mobile bottom nav */}
       <div className="h-16 md:hidden" />
     </footer>
   );

@@ -2,15 +2,15 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Home, User, BookOpen, Mountain, MessageCircle } from "lucide-react";
+import { Home, User, BookOpen, Mountain, Landmark } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const mobileNavItems = [
   { label: "Home", href: "/", icon: Home },
   { label: "About", href: "/about", icon: User },
   { label: "Teachings", href: "/blog", icon: BookOpen },
-  { label: "Retreat", href: "https://www.bodhidhammayan.org/", icon: Mountain, external: true },
-  { label: "Contact", href: "#contact", icon: MessageCircle },
+  { label: "Retreat", href: "/#bodhidhammayan", icon: Mountain },
+  { label: "Manasikarn", href: "/#manasikarn", icon: Landmark },
 ];
 
 export function MobileBottomNav() {
@@ -23,30 +23,16 @@ export function MobileBottomNav() {
           const isActive =
             item.href === "/"
               ? pathname === "/"
-              : !item.external && pathname.startsWith(item.href);
+              : pathname.startsWith(item.href.split("#")[0]) &&
+                item.href.split("#")[0] !== "/";
           const Icon = item.icon;
-
-          if (item.external) {
-            return (
-              <a
-                key={item.label}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-0.5 px-3 py-1 text-brand-dark/60"
-              >
-                <Icon className="h-5 w-5" />
-                <span className="text-[10px] font-medium">{item.label}</span>
-              </a>
-            );
-          }
 
           return (
             <Link
               key={item.label}
               href={item.href}
               className={cn(
-                "flex flex-col items-center gap-0.5 px-3 py-1 transition-colors",
+                "relative flex flex-col items-center gap-0.5 px-3 py-1 transition-colors",
                 isActive
                   ? "text-brand-gold-600"
                   : "text-brand-dark/60 hover:text-brand-gold-500"
