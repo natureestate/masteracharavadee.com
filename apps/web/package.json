@@ -38,6 +38,7 @@
     "@vitejs/plugin-react": "^5.1.4",
     "@vitejs/plugin-rsc": "^0.5.21",
     "autoprefixer": "^10",
+    "next": "15.5.12",
     "postcss": "^8",
     "tailwindcss": "^4",
     "typescript": "^5",
