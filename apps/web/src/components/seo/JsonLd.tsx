@@ -20,7 +20,7 @@ export function HomeJsonLd() {
           "Thai lay Buddhist teacher and former entrepreneur, founder of Bodhidhammayan retreat and Knowing Buddha Organization.",
         url: "https://masteracharavadee.com",
         image:
-          "https://masteracharavadee.com/images/master-portrait.jpg",
+          "https://masteracharavadee.com/images/master-portrait.webp",
         sameAs: [
           "https://www.facebook.com/profile.php?id=61553446727150",
           "https://www.youtube.com/watch?v=55vd5-S6h0k",

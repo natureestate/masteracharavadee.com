@@ -49,7 +49,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
             <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-brand-gold-500 shrink-0">
               <Image
-                src="/images/dhamma-icon.png"
+                src="/images/dhamma-icon.webp"
                 alt="Dhamma"
                 width={80}
                 height={80}

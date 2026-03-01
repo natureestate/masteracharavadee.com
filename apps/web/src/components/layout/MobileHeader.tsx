@@ -97,7 +97,7 @@ export function MobileHeader() {
         <div className="flex items-center justify-between px-4 h-14">
           <Link href="/" className="shrink-0" onClick={closeMenu}>
             <Image
-              src="/images/logo-master.png"
+              src="/images/logo-master.webp"
               alt="Master Acharavadee"
               width={140}
               height={46}
@@ -163,7 +163,7 @@ export function MobileHeader() {
               <div className="px-6 pt-6 pb-4 border-b border-brand-gold-100/50">
                 <div className="flex items-center gap-3">
                   <Image
-                    src="/images/logo-master.png"
+                    src="/images/logo-master.webp"
                     alt="Master Acharavadee"
                     width={120}
                     height={40}

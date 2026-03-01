@@ -11,7 +11,7 @@ export function AboutSection() {
           <div className="relative order-2 md:order-1">
             <div className="relative aspect-3/4 rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/master-portrait.jpg"
+                src="/images/master-portrait.webp"
                 alt="Master Acharavadee Wongsakon"
                 fill
                 className="object-cover"

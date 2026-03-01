@@ -5,7 +5,7 @@ import { ExternalLink } from "lucide-react";
 export function ManasikarnSection() {
   return (
     <>
-      <div className="relative w-full h-[50vh] md:h-[65vh]">
+      <div className="relative w-full h-[50vh] md:h-[65vh] overflow-hidden">
         <Image
           src="https://masteracharavadee.com/wp-content/uploads/2022/11/manasikarn.jpeg"
           alt="Manasikarn Hall aerial view"

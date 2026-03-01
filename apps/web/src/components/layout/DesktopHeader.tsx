@@ -73,7 +73,7 @@ export function DesktopHeader() {
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-20">
         <Link href="/" className="shrink-0">
           <Image
-            src="/images/logo-master.png"
+            src="/images/logo-master.webp"
             alt="Master Acharavadee"
             width={180}
             height={60}

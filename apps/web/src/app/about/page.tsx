@@ -37,7 +37,7 @@ const timeline = [
   {
     id: "techo-vipassana",
     title: "Techo Vipassana, the teachings of Venerable Som Dej Toh",
-    image: "/images/biography-somdej.jpg",
+    image: "/images/biography-somdej.webp",
     imageAlt: "Venerable Som Dej Toh",
     paragraphs: [
       "After the many meditation retreats, the greed and the anger that Acharavadee had accumulated started dissipating and her faith grew stronger in the teachings of the Buddha. At the time, Acharavadee took her practice even more seriously and started to isolate herself at home and practice for long periods like an ascetic, meditating at least 12 hours a day. It was at that time when an unexpected twist happened to her that would change her meditation practice forever. During one day of solitude meditation, Venerable Som Dej Toh, came to teach her in the middle of her meditation practice and taught her the Vipassana technique on how to burn the impurities of the mind.",
@@ -122,7 +122,7 @@ export default function AboutPage() {
       {/* Full-width image */}
       <section className="relative h-[50vh] md:h-[60vh]">
         <Image
-          src="/images/biography-full.jpg"
+          src="/images/biography-full.webp"
           alt="Master Acharavadee with students"
           fill
           className="object-cover"

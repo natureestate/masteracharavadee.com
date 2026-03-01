@@ -9,7 +9,7 @@ const samplePosts = [
     title: "Meditating for a country",
     slug: "meditating-for-a-country",
     publishedAt: "2025-12-21",
-    imageUrl: "/images/blog/meditating-for-a-country.jpg",
+    imageUrl: "/images/blog/meditating-for-a-country.webp",
     categories: [
       { title: "Motion", slug: { current: "motion" } },
       { title: "News", slug: { current: "news" } },
@@ -19,7 +19,7 @@ const samplePosts = [
     title: "International World Intangible Cultural Heritage and Healthy Lifestyle event",
     slug: "international-world-intangible-cultural-heritage-and-healthy-lifestyle-event",
     publishedAt: "2025-07-28",
-    imageUrl: "/images/blog/intangible-cultural-heritage.jpg",
+    imageUrl: "/images/blog/intangible-cultural-heritage.webp",
     categories: [
       { title: "Motion", slug: { current: "motion" } },
       { title: "News", slug: { current: "news" } },
@@ -29,14 +29,14 @@ const samplePosts = [
     title: "Why Meditation Can Cure Depression?",
     slug: "why-meditation-can-cure-depression",
     publishedAt: "2025-06-08",
-    imageUrl: "/images/blog/meditation-cure-depression.jpg",
+    imageUrl: "/images/blog/meditation-cure-depression.webp",
     categories: [{ title: "Teaching", slug: { current: "teaching" } }],
   },
   {
     title: "Who is the Buddha?",
     slug: "who-is-the-buddha",
     publishedAt: "2025-06-02",
-    imageUrl: "/images/blog/who-is-the-buddha.jpg",
+    imageUrl: "/images/blog/who-is-the-buddha.webp",
     categories: [{ title: "Teaching", slug: { current: "teaching" } }],
   },
 ];
