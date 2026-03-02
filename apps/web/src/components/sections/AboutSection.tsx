@@ -19,7 +19,7 @@ export function AboutSection() {
                 priority
               />
             </div>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-brand-gold-400 rounded-2xl hidden md:block" />
+            
           </div>
 
           <div className="order-1 md:order-2">

@@ -5,7 +5,7 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-brand-dark overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-50"
+        className="absolute inset-0 bg-cover bg-center opacity-60"
         style={{
           backgroundImage: "url(/images/retreat-aerial.webp)",
         }}

@@ -10,7 +10,7 @@ export function ManasikarnSection() {
           src="/images/manasikarn-aerial.webp"
           alt="Manasikarn Hall aerial view"
           fill
-          className="object-cover object-[center_70%] md:object-[center_30%]"
+          className="object-cover object-[center_70%] md:object-[center_15%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/20" />
