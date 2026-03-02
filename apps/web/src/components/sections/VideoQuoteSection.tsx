@@ -15,9 +15,22 @@ export function VideoQuoteSection() {
           dedicated her life to teaching Vipassana meditation, teaching dhamma
           and protecting Buddhism&rdquo;
         </blockquote>
+
+        <div className="relative w-full max-w-3xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-xl border border-brand-gold-200/50">
+          <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/55vd5-S6h0k"
+              title="Master Acharavadee Wongsakon"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
+
         <Button variant="outline" size="lg" asChild>
           <a
-            href="https://www.youtube.com/watch?v=55vd5-S6h0k"
+            href="https://www.youtube.com/@masteracharavadee"
             target="_blank"
             rel="noopener noreferrer"
             className="gap-2"

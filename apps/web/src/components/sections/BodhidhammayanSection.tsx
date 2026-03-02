@@ -7,10 +7,10 @@ export function BodhidhammayanSection() {
     <>
       <div className="relative w-full h-[50vh] md:h-[65vh]">
         <Image
-          src="https://i0.wp.com/masteracharavadee.com/wp-content/uploads/2022/08/JP_DJI_0065-2_W_re.jpg?resize=2048%2C1150&ssl=1"
+          src="/images/bodhidhammayan-aerial.webp"
           alt="Bodhidhammayan aerial view"
           fill
-          className="object-cover"
+          className="object-cover h-full"
           sizes="100vw"
         />
       </div>

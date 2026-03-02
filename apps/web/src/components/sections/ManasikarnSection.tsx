@@ -7,10 +7,10 @@ export function ManasikarnSection() {
     <>
       <div className="relative w-full h-[50vh] md:h-[65vh] overflow-hidden">
         <Image
-          src="https://masteracharavadee.com/wp-content/uploads/2022/11/manasikarn.jpeg"
+          src="/images/manasikarn-aerial.webp"
           alt="Manasikarn Hall aerial view"
           fill
-          className="object-cover object-[center_70%]"
+          className="object-cover object-[center_70%] md:object-[center_30%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/20" />

@@ -5,12 +5,12 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-brand-dark overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-30"
+        className="absolute inset-0 bg-cover bg-center opacity-50"
         style={{
           backgroundImage: "url(/images/retreat-aerial.webp)",
         }}
       />
-      <div className="absolute inset-0 bg-linear-to-b from-brand-dark/60 via-brand-dark/40 to-brand-dark/80" />
+      <div className="absolute inset-0 bg-linear-to-b from-brand-dark/40 via-brand-dark/20 to-brand-dark/60" />
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div className="mb-8">
