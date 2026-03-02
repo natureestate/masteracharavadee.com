@@ -5,23 +5,26 @@ import { ExternalLink } from "lucide-react";
 export function ManasikarnSection() {
   return (
     <>
-      <div className="relative w-full h-[50vh] md:h-[65vh] overflow-hidden">
+      <div id="manasikarn" className="relative w-full h-[50vh] md:h-[65vh] overflow-hidden">
         <Image
           src="/images/manasikarn-aerial.webp"
           alt="Manasikarn Hall aerial view"
           fill
-          className="object-cover object-[center_70%] md:object-[center_15%]"
+          className="object-cover object-[center_70%] md:object-[center_68%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-wide drop-shadow-lg">
+        <div className="absolute inset-0 flex items-center justify-center md:items-start md:pt-[30%]">
+          <h2
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-wide drop-shadow-lg"
+            style={{ fontFamily: '"Times New Roman", Times, serif' }}
+          >
             Manasikarn Hall
           </h2>
         </div>
       </div>
 
-      <section id="manasikarn" className="py-20 md:py-28 bg-white">
+      <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto section-padding">
           <div className="max-w-3xl mx-auto">
             <span className="text-brand-gold-500 text-sm font-semibold tracking-widest uppercase mb-2 block text-center">
