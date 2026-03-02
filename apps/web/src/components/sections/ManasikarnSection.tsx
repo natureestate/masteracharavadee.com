@@ -14,7 +14,7 @@ export function ManasikarnSection() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 flex items-center justify-center md:items-start md:pt-[30%]">
+        <div className="absolute inset-0 flex items-center justify-center md:items-start md:pt-[10%]">
           <h2
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-wide drop-shadow-lg"
             style={{ fontFamily: '"Times New Roman", Times, serif' }}
